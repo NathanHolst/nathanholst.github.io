@@ -1,0 +1,43 @@
+line {
+    stroke: black;
+    stroke-width: 10px;
+}
+.outer {
+    fill: green;
+}
+.inner, #encircle {
+    fill: black;
+}
+#band {
+    stroke: green;
+    stroke-width: 20px;
+    fill-opacity: 0%;
+}
+.border {
+    stroke: black;
+    stroke-width: 5px;
+    fill-opacity: 0%;
+}
+#smallTri {
+    stroke: darkred;
+    stroke-width: 10px;
+    fill: yellowgreen;
+}
+#bigTri {
+    fill: yellowgreen;
+    stroke: black;
+}
+#star {
+    fill: darkred;
+}
+#svgBlock {
+    display: flex;
+    justify-content: center;
+}
+a {
+    display: block;
+    font-size: medium;
+}
+h1, a {
+    text-align: center;
+}

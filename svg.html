@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SVG</title>
+    <link rel="stylesheet" href="svg.css">
+</head>
+<body>
+<div>
+    <h1>Nathan Holst: SVG Drawing
+        <a href="index.html">Home</a>
+    </h1>
+</div>
+<div id="svgBlock">
+    <svg width="800" height="800">
+<!--        I am going to attempt to draw the BioHazard Symbol in a caution triangle with a star in the center....-->
+        <path d="M 365,86.5 Q 400,25 435,86.5 L 715,578.5 Q 750,640 680,640 L 120,640 Q 50,640 85.5,578.5 z" id="bigTri"/>
+        <path d="M 367.5,107.5 Q 400,50 432.5,107.5 L 692.5,567.5 Q 725,625 660,625 L 140,625 Q 75,625 107.5,567.5 z" id="smallTri"/>
+
+        <text x="400" y="600" style="text-anchor: middle; font-size: 32pt; font-weight: bold; font-family: Verdana" fill="green" stroke="black">BIOHAZARD</text>
+
+        <circle r="155" cx="400" cy="400" id="encircle"/>
+
+        <circle r="78" cx="400" cy="327" class="outer"/>
+        <circle r="58" cx="400" cy="307" class="inner"/>
+
+        <circle r="78"cx="335" cy="433" class="outer"/>
+        <circle r="58"cx="320" cy="447" class="inner"/>
+
+        <circle r="78" cx="465" cy="433" class="outer"/>
+        <circle r="58" cx="480" cy="447" class="inner"/>
+
+        <circle r="67" cx="400" cy="400" id="band"/>
+        <circle r="22" cx="400" cy="400" class="inner"/>
+
+        <circle r="56" cx="400" cy="307" class="border"/>
+        <circle r="56"cx="320" cy="447" class="border"/>
+        <circle r="56" cx="480" cy="447" class="border"/>
+
+        <line x1="400" y1="400" x2="400" y2="354"/>
+        <line x1="400" y1="400"x2="360" y2="424"/>
+        <line x1="400" y1="400"x2="440" y2="424"/>
+
+        <polygon points="400,378 414,417 378.5,392 421.5,392 386,417" id="star"/>
+    </svg>
+</div>
+</body>
+</html>
