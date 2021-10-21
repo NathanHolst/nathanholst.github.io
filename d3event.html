@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D3 Event</title>
+    <script src="https://d3js.org/d3.v7.min.js">
+    </script>
+</head>
+<body>
+<script type="text/javascript">
+    let span1 = d3.select("body").append("span").attr("id", "icon").on("mousemove", (e) => {let pos = d3.pointer(e); div3.text(`Mouse X: ${pos[0]}, Y: ${pos[1]}`)});
+    let div1 = d3.select("body").append("div");
+    let div2 = d3.select("body").append("div");
+    let div3 = d3.select("body").append("div");
+
+    let twitter = span1.append("img").attr("x", 0).attr("y", 0).attr("width", 100).attr("height", 100).attr("src", "/twitter.png").attr("id", "twitter")
+        .on("mouseenter", () => {div1.text("In: Twitter"); twitter.attr("style", "opacity: 0.5")})
+        .on("mouseleave", () => {div2.text("Out: Twitter"); twitter.attr("style", "opacity: 1.0")})
+        .on("dblclick", () => {window.open("https://www.twitter.com")})
+        .on("mousedown", () => {twitter.attr("width", 200).attr("height", 200)})
+        .on("mouseup", () => {twitter.attr("width", 100).attr("height", 100)});
+
+
+
+    let facebook = span1.append("img").attr("x", 105).attr("y", 0).attr("width", 100).attr("height", 100).attr("src", "/facebook.png").attr("id", "facebook")
+        .on("mouseenter", () => {div1.text("In: Facebook"); facebook.attr("style", "opacity: 0.5")})
+        .on("mouseleave", () => {div2.text("Out: Facebook"); facebook.attr("style", "opacity: 1.0")})
+        .on("dblclick", () => {window.open("https://www.facebook.com")})
+        .on("mousedown", () => {facebook.attr("width", 200).attr("height", 200)})
+        .on("mouseup", () => {facebook.attr("width", 100).attr("height", 100)});
+
+
+    let reddit = span1.append("img").attr("x", 210).attr("y", 0).attr("width", 100).attr("height", 100).attr("src", "/reddit.png").attr("id", "reddit")
+        .on("mouseenter", () => {div1.text("In: Reddit"); reddit.attr("style", "opacity: 0.5")})
+        .on("mouseleave", () => {div2.text("Out: Reddit"); reddit.attr("style", "opacity: 1.0")})
+        .on("dblclick", () => {window.open("https://www.reddit.com")})
+        .on("mousedown", () => {reddit.attr("width", 200).attr("height", 200)})
+        .on("mouseup", () => {reddit.attr("width", 100).attr("height", 100)});
+
+
+    let linkedin = span1.append("img").attr("x", 315).attr("y", 0).attr("width", 100).attr("height", 100).attr("src", "/linkedin.png").attr("id", "linkedin")
+        .on("mouseenter", () => {div1.text("In: LinkedIn"); linkedin.attr("style", "opacity: 0.5")})
+        .on("mouseleave", () => {div2.text("Out: LinkedIn"); linkedin.attr("style", "opacity: 1.0")})
+        .on("dblclick", () => {window.open("https://www.linkedin.com")})
+        .on("mousedown", () => {linkedin.attr("width", 200).attr("height", 200)})
+        .on("mouseup", () => {linkedin.attr("width", 100).attr("height", 100)});
+
+
+    let instagram = span1.append("img").attr("x", 420).attr("y", 0).attr("width", 100).attr("height", 100).attr("src", "/instagram.png").attr("id", "instagram")
+        .on("mouseenter", () => {div1.text("In: Instagram"); instagram.attr("style", "opacity: 0.5")})
+        .on("mouseleave", () => {div2.text("Out: Instagram"); instagram.attr("style", "opacity: 1.0")})
+        .on("dblclick", () => {window.open("https://www.instagram.com")})
+        .on("mousedown", () => {instagram.attr("width", 200).attr("height", 200)})
+        .on("mouseup", () => {instagram.attr("width", 100).attr("height", 100)});
+
+
+</script>
+</body>
+</html>

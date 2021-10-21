@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+    <style>
+        form {
+            display: table;
+        }
+        p {
+            display: table-row;
+        }
+        .labels {
+            display: table-cell;
+            text-align: right;
+            padding: 5px;
+        }
+        .inputs {
+            display: table-cell;
+        }
+    </style>
+    <script>
+        function verifyInfo() {
+            var retry = ""
+            var valid = true
+            if (document.myForm.usrname.value == "") {
+                retry += 'Please Enter <span style="color: red"> Username </span><br>'
+                valid = false
+            }else if (!(/^([a-z0-9]){4,12}$/.test(document.myForm.usrname.value))) {
+                retry += 'Please Enter <span style="color: orange"> a valid Username </span><br>'
+                valid = false
+            }
+            if (document.myForm.email.value == "") {
+                retry += 'Please Enter <span style="color: red"> Email </span><br>'
+                valid = false
+            } else if (!(/@/.test(document.myForm.email.value)) && !(/.net/.test(document.myForm.email.value)) && !(/.com/.test(document.myForm.email.value)) && !(/.org/.test(document.myForm.email.value)) && !(/.edu/.test(document.myForm.email.value))) {
+                retry += 'Please Enter <span style="color: orange"> a valid Email </span><br>'
+                valid = false
+            }
+            if (document.myForm.phone.value == "") {
+                retry += 'Please Enter <span style="color: red"> Phone Number </span><br>'
+                valid = false
+            } else if (!(/\d\d\d-\d\d\d-\d\d\d\d/.test(document.myForm.phone.value))) {
+                retry += 'Please Enter <span style="color: orange"> a valid Phone Number </span><br>'
+                valid = false
+            }
+            if (document.myForm.password.value == "") {
+                retry += 'Please Enter <span style="color: red"> Password </span><br>'
+                valid = false
+            } else if (!(/[a-z]/.test(document.myForm.password.value)) || !(/[A-Z]/.test(document.myForm.password.value)) || !(/[0-9]/.test(document.myForm.password.value)) || !(/\W/.test(document.myForm.password.value))) {
+                retry += 'Please Enter <span style="color: orange"> a valid password </span><br>'
+                valid = false
+            }
+            if (!document.myForm.gender[0].checked && !document.myForm.gender[1].checked && !document.myForm.gender[2].checked) {
+                retry += 'Please Select <span style="color: red"> Gender </span><br>'
+            }
+            if (document.myForm.bmonth.selectedIndex == 0 || document.myForm.bday.selectedIndex == 0 || document.myForm.byear.selectedIndex == 0) {
+                retry += 'Please Select <span style="color: red"> Birthday </span><br>'
+                valid = false
+            }
+            if (valid) {
+                if (document.myForm.password.value !== document.myForm.conPass.value) {
+                    alert("Passwords do not match")
+                } else {
+                    location.href = "index.html"
+                }
+            } else {
+                document.getElementById("errors").innerHTML = retry
+            }
+        }
+
+        function onClear() {
+            setTimeout(function (){
+                document.getElementById("errors").innerHTML = ""
+            }, 0)
+        }
+    </script>
+</head>
+<body>
+<form action="POST" onsubmit="verifyInfo()" name="myForm">
+    <p>
+        <label for="usrname" class="labels">Username:</label>
+        <input type="text" label="Username:" id="usrname" name="usrname" class="inputs">
+    </p>
+
+    <p>
+        <label for="email" class="labels">Email:</label>
+        <input type="text" label="Email:" id="email" name="email" class="inputs">
+    </p>
+
+    <p>
+        <label for="phone" class="labels">Phone Number:</label>
+        <input type="text" label="Phone number:" id="phone" name="phone" class="inputs">
+    </p>
+
+    <p>
+        <label for="password" class="labels">Enter Password:</label>
+        <input type="password" label="Enter Password:" id="password" name="password" class="inputs">
+    </p>
+
+    <p>
+        <label for="conPass" class="labels">Confirm Password:</label>
+        <input type="password" label="Confirm Password:" id="conPass" name="conPass" class="inputs">
+    </p>
+
+    <p>
+        <span class="labels">Gender:</span>
+        <span class="inputs">
+            <input type="radio" label="Female" id="female" name="gender">
+            <label for="female">Female</label>
+            <input type="radio" label="Male" id="male"name="gender">
+            <label for="male">Male</label>
+            <input type="radio" label="Other" id="other"name="gender">
+            <label for="other">Other</label>
+        </span>
+    </p>
+
+    <p>
+        <span class="labels">
+            <label for="birth">Birth Day:</label>
+        </span>
+        <span class="inputs">
+            <select name="bmonth" id="birth">
+                <option value="month"></option>
+                <option value="jan">January</option>
+                <option value="feb">February</option>
+                <option value="mar">March</option>
+                <option value="apr">April</option>
+                <option value="may">May</option>
+                <option value="jun">June</option>
+                <option value="jul">July</option>
+                <option value="aug">August</option>
+                <option value="sep">September</option>
+                <option value="oct">October</option>
+                <option value="nov">November</option>
+                <option value="dec">December</option>
+            </select>
+            <select name="bday">
+                <option value="day"></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+            </select>
+            <select name="byear">
+                <option value="year"></option>
+                <option value="1970">1970</option>
+                <option value="1971">1971</option>
+                <option value="1972">1972</option>
+                <option value="1973">1973</option>
+                <option value="1974">1974</option>
+                <option value="1975">1975</option>
+                <option value="1976">1976</option>
+                <option value="1977">1977</option>
+                <option value="1978">1978</option>
+                <option value="1979">1979</option>
+                <option value="1980">1980</option>
+                <option value="1981">1981</option>
+                <option value="1982">1982</option>
+                <option value="1983">1983</option>
+                <option value="1984">1984</option>
+                <option value="1985">1985</option>
+                <option value="1986">1986</option>
+                <option value="1987">1987</option>
+                <option value="1988">1988</option>
+                <option value="1989">1989</option>
+                <option value="1990">1990</option>
+                <option value="1991">1991</option>
+                <option value="1992">1992</option>
+                <option value="1993">1993</option>
+                <option value="1994">1994</option>
+                <option value="1995">1995</option>
+                <option value="1996">1996</option>
+                <option value="1997">1997</option>
+                <option value="1998">1998</option>
+                <option value="1999">1999</option>
+                <option value="2000">2000</option>
+                <option value="2001">2001</option>
+                <option value="2002">2002</option>
+                <option value="2003">2003</option>
+                <option value="2004">2004</option>
+                <option value="2005">2005</option>
+                <option value="2006">2006</option>
+                <option value="2007">2007</option>
+                <option value="2008">2008</option>
+                <option value="2008">2008</option>
+                <option value="2009">2009</option>
+                <option value="2010">2010</option>
+            </select>
+        </span>
+    </p>
+
+    <p>
+        <span class="labels">Favorite Music Genre:</span>
+        <span class="inputs">
+            <input type="checkbox" id="pop" name="pop">
+            <label for="pop">Pop</label>
+            <input type="checkbox" id="hiphop" name="hiphop">
+            <label for="hiphop">Hiphop</label>
+            <input type="checkbox" id="jazz" name="jazz">
+            <label for="jazz">Jazz</label>
+            <input type="checkbox" id="rock" name="rock">
+            <label for="rock">Rock</label>
+            <input type="checkbox" id="classical" name="classical">
+            <label for="classical">Classical music</label>
+            <input type="checkbox" id="country" name="country">
+            <label for="country">Country</label>
+        </span>
+    </p>
+
+    <p>
+        <span class="labels"></span>
+        <span class="inputs">
+            <input type="button" value="submit" id="submit" onclick="verifyInfo()">
+            <input type="reset" value="clear" id="clear" onclick="onClear()">
+        </span>
+    </p>
+</form>
+<div id="errors">
+
+</div>
+</body>
+</html>
